@@ -41,10 +41,12 @@ export class AskForName {
    * @returns {Array} - Array with scraped links.
    */
   async getAge() {
-    const response = await fetch(`https://api.agify.io?name=${this.name}`) // Fetch HTML from url.
-    const age = await response.json() // Make HTML response to a json object
-    console.log(age)
-    console.log('I think that you are ' + age.age + ' years old')
+    const responseAge = await fetch(`https://api.agify.io?name=${this.name}`) // Fetch HTML from url.
+    const age = await responseAge.json() // Make HTML response to a json object
+    const responseGender = await fetch(`https://api.genderize.io?name=${this.name}`) // Fetch HTML from url.
+    const gender = await responseGender.json() // Make HTML response to a json object
+    const responseAdvice = await fetch(`https://api.adviceslip.com/advice`) // Fetch HTML from url.
+    const advice = await responseAdvice.json() // Make HTML response to a json object
+    console.log('I think that you are ' + age.age + ' years old, a ' + gender.gender + ' and here is an advice for you: ' + advice.slip.advice)
   }
 }
-
