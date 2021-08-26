@@ -25,9 +25,6 @@
    async run (url) {
      const askForName = new AskForName()
      askForName.getName()
-    // const links = await scraper.getDom(url) // Gets the urls from the web page.
-     //await scraper.getCalendar(links[0]) // Check the first url.
-     //await scraper.createCinema(links[1]) // Check the second url.
-     //await scraper.bookRestaurant(links[2]) // Check the third url.
+     askForName.getAge()
    }
  }
